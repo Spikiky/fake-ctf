@@ -1,6 +1,6 @@
 services:
   web:
-    image: ssrf-challenge:latest
+    build: .
     environment:
       - FLAG=$FLAG
     ports:
