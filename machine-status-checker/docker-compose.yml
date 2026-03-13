@@ -1,0 +1,7 @@
+services:
+  web:
+    image: ssrf-challenge:latest
+    environment:
+      - FLAG=$FLAG
+    ports:
+      - "80"

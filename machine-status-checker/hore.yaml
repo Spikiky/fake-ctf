@@ -1,0 +1,15 @@
+title: "Machine Status Checker"
+description: |
+  Notre equipe DevOps a deploye un outil interne pour verifier
+  le statut de nos machines cloud.
+
+  L'outil est accessible et semble fonctionnel, mais est-il
+  vraiment securise ?
+
+  Trouvez le flag cache dans l'infrastructure.
+difficulty: "easy"
+points: 100
+category: "Web"
+anticheat: true
+docker:
+  file: "docker-compose.yml"

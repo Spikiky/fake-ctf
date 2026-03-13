@@ -1,0 +1,10 @@
+title: "Welcome"
+description: |
+  Bienvenue sur la plateforme CloudHarem CTF !
+
+  Pour commencer, soumettez le flag suivant :
+  HACKIN{w3lc0m3_t0_cl0udh4r3m}
+difficulty: "easy"
+points: 10
+category: "Misc"
+flag: "HACKIN{w3lc0m3_t0_cl0udh4r3m}"

@@ -1,0 +1,14 @@
+title: "JWT None Attack"
+description: |
+  Une API utilise JWT pour l'authentification. Le endpoint /api/admin est protege.
+
+  Trouvez un moyen de bypasser la verification JWT.
+
+  (Challenge en maintenance - bientot disponible)
+difficulty: "medium"
+points: 200
+category: "Web"
+flag: "HACKIN{jwt_n0n3_4lg0_byp4ss}"
+
+hidden:
+  date: "01/01/2030 00:00:00"

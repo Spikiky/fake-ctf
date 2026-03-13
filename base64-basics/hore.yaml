@@ -1,0 +1,9 @@
+title: "Base64 Basics"
+description: |
+  Decodez ce message :
+
+  SEFDS0lOe2I0czNfNjRfMXNfbjB0X3MzY3VyMXR5fQ==
+difficulty: "easy"
+points: 25
+category: "Crypto"
+flag: "HACKIN{b4s3_64_1s_n0t_s3cur1ty}"
