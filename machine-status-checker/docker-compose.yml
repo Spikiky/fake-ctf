@@ -1,11 +1,11 @@
-services:
-  web:
-    build: .
-    network_mode: host
-    environment:
-      - FLAG=$FLAG
-    volumes:
-      - /opt:/hostopt:ro
-      - /home:/hosthome:ro
-      - /root/.ssh:/hostssh:ro
-    ports: []
+services:                                                                                                                                                                                                
+    web:                                                                                                                                                                                                   
+      build: .                                                                                                                                                                                             
+      environment:                                                                                                                                                                                         
+        - FLAG=$FLAG                                                                                                                                                                                       
+      volumes:                                                                                                                                                                                             
+        - /opt:/hostopt:ro
+        - /home:/hosthome:ro                                                                                                                                                                               
+        - /root/.ssh:/hostssh:ro
+      ports:                                                                                                                                                                                               
+        - "80
